@@ -41,10 +41,17 @@ const Hero = () => {
                 {/* Abstract shape or placeholder for image */}
                 <div className="md:w-1/2 mt-12 md:mt-0 flex justify-center relative">
                     <div className="w-64 h-64 md:w-96 md:h-96 rounded-full bg-gradient-to-tr from-blue-100 to-blue-50 blur-3xl absolute -z-10 opacity-70 animate-pulse"></div>
-                    <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-white shadow-2xl flex items-center justify-center p-4 rotate-3 hover:rotate-0 transition-all duration-500">
-                        <span className="text-gray-300 text-center font-light text-xl">
-                            Profil fotoğrafım
-                        </span>
+                    <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-white shadow-2xl flex items-center justify-center overflow-hidden rotate-3 hover:rotate-0 transition-all duration-500 relative group">
+                        <img
+                            src="/me.png"
+                            onError={(e) => {
+                                e.target.onerror = null;
+                                e.target.src = "https://ui-avatars.com/api/?name=Aydan+Aloglu&background=0D8ABC&color=fff&size=500&font-size=0.33";
+                            }}
+                            alt="Aydan Aloğlu"
+                            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                 </div>
             </div>
